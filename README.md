@@ -10,4 +10,13 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   <li>Rede configurada em Host-Only</li> 
   <li>IP do alvo: 192.168.56.101</li>
 </ul>
+<br>
 
+![Arquitetura](virtualbox.JPG)
+<br>
+![Host](hostonly.JPG)
+
+
+
+<hr>
+abc
