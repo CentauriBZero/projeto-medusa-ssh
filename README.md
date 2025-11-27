@@ -22,3 +22,15 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   <li>Medusa</li>
   <li>Metasploitable 2</li>
 </ul>
+![Fe](ferramentas.JPG)
+<br>
+<ol>
+  <li><h3>Descobrindo dispositivos ativos na rede</h3></li>
+  Para identificar quais máquinas estavam ativas na rede interna (Host-Only), utilizei o comando:<br>
+  <br>
+  
+  ```
+ nmap -sn 192.168.56.0/24
+ ```
+  
+</ol>
