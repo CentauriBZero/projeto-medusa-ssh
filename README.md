@@ -12,9 +12,9 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
 </ul>
 <br>
 
-![Arquitetura](virtualbox.JPG)
+![Arquitetura](./images/virtualbox.JPG)
 <br>
-![Host](hostonly.JPG)
+![Host](./images/hostonly.JPG)
 <br>
 <h3>Ferramentas Utilizadas</h3>
 <ul>
@@ -23,7 +23,7 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   <li>Metasploitable 2</li>
 </ul>
 
-![Fe](ferramentas.JPG)
+![Fe](./images/ferramentas.JPG)
 <br><br>
 <ol>
   <h2><li>Descobrindo dispositivos ativos na rede</li></h2>
@@ -34,7 +34,8 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
  nmap -sn 192.168.56.0/24
  ```
   Com isso Identificamos o IP alvo:
-   image
+  
+   ![Rede](./images/dispositivosrede.JPG)
    
    <h2><li>Identificando portas abertas</li></h2>
    Após localizar o alvo, realizei um scan de serviços e versões utilizando:<br>
@@ -44,7 +45,8 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   nmap -sV 192.168.56.101
   ```
   Com isso identificamos as portas abertas:
-  image
+  
+  ![Portas](./images/portasabertas.JPG)
 
   <h2><li>Criação das wordlists de usuários e senhas</li></h2>
   Para realizar o ataque de força bruta no serviço SSH, criei duas wordlists simples: Uma contendo possíveis usuários e outra com possíveis senhas.
@@ -56,7 +58,7 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   ```
   echo -e 'user\nservice\nWelcome123\nmsfadmin\n123456\nadmin\nteste\nroot'> ssh_users.txt
   ```
-  image
+  ![Users](./images/ssh_users.JPG)
    <br>
   <h4>Wordlist de senhas</h4>
   Em seguida, criei o arquivo ssh_pass.txt com senhas fracas e frequentemente utilizadas em sistemas vulneráveis:, com o comando:
@@ -65,7 +67,7 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   ```
   echo -e 'password\n123\kali123\nmsfadmin\n123456\nadmin123\nteste123\nhello123' > ssh_pass.txt
   ```
-  image
+  ![Pass](./images/ssh_pass.JPG)
 
   <h2><li>Ataque de força bruta</li></h2>
   Com as wordlists de usuários e senhas criadas, realizei um ataque de força bruta contra o serviço SSH da máquina Metasploitable. O comando utilizado foi:
@@ -76,8 +78,10 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   ```
 
   <h4>Resultado do ataque</h4>
-  Após executar o ataque de força bruta, foi possível identificar uma combinação válida de usuário e senha para acessar o serviço SSH da máquina Metasploitable.:
-  image
+  Após executar o ataque de força bruta, foi possível identificar uma combinação válida de usuário e senha para acessar o serviço SSH da máquina Metasploitable.
+  <br><br>
+  
+  ![Forca](./images/forcabruta.JPG)
 
   Combinação encontrada:
 
@@ -95,7 +99,9 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   ```
   <h4>Problema encontrado durante o acesso</h4>
   Ao tentar conectar, o SSH retornou o seguinte erro:
-  image
+  <br><br>
+  
+  ![Erro](./images/errossh.JPG)
   
   Esse erro ocorre porque:
   <ul>
@@ -112,7 +118,9 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   ```
   <br>
   Após isso, o acesso foi estabelecido normalmente:
-  image
+  <br><br>
+
+  ![Acesso](./images/acessossh.JPG)
   
   <h2><li>Conclusão</li></h2>
   Este projeto demonstrou, na prática o uso de ferramentas em um ambiente controlado com Kali Linux e uma máquina vulnerável. Foi possível configurar corretamente as duas VMs, identificar o serviço SSH ativo na Metasploitable, criar wordlists simples e, executar um ataque de força bruta para verificar a segurança do serviço.
