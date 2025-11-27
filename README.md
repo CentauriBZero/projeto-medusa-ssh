@@ -120,7 +120,23 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   <br><br>
 
   ![Acesso](./images/acessossh.JPG)
+
   
+  <h2><li>Recomendações de Segurança</li></h2>
+  Com base nos resultados obtidos, seguem as principais recomendações para mitigar esse tipo de vulnerabilidade em ambientes reais:
+  <ol type=1>
+    <h4><li>Alterar credenciais padrão imediatamente</li></h4>
+    Senhas padrão são o vetor mais comum de ataques de força bruta.
+    <h4><li>Atualizar o OpenSSH para uma versão moderna</li></h4>
+    Versões antigas usam algoritmos fracos como ssh-rsa e ssh-dss.
+    <h4><li>Implementar políticas de senha forte</li></h4>
+    Incluindo complexidade, expiração e tentativa limitada de login.
+    <h4><li>Utilizar autenticação por chave SSH</li></h4>
+    Mais segura que autenticação por senha.
+    <h4><li>Restringir o acesso a todas as portas</li></h4>
+    Por padrão, todas as portas de entrada devem permanecer bloqueadas no servidor, exceto aquelas que são realmente necessárias para o seu funcionamento. Essa prática reduz               significativamente a superfície de ataque.
+  </ol>
+  <br>
   <h2><li>Conclusão</li></h2>
   Este projeto demonstrou, na prática o uso de ferramentas em um ambiente controlado com Kali Linux e uma máquina vulnerável. Foi possível configurar corretamente as duas VMs, identificar o serviço SSH ativo na Metasploitable, criar wordlists simples e, executar um ataque de força bruta para verificar a segurança do serviço.
   <br><br>
