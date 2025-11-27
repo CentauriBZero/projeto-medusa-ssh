@@ -15,8 +15,10 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
 ![Arquitetura](virtualbox.JPG)
 <br>
 ![Host](hostonly.JPG)
-
-
-
-<hr>
-abc
+<br>
+<h3>Ferramentas Utilizadas</h3>
+<ul>
+  <li>Kali Linux</li>
+  <li>Medusa</li>
+  <li>Metasploitable 2</li>
+</ul>
