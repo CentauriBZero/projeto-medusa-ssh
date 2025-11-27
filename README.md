@@ -23,8 +23,7 @@ O objetivo é compreender vulnerabilidades de autenticação, explorar serviços
   <li>Metasploitable 2</li>
 </ul>
 
-![Fe](./images/ferramentas.png)
-<br><br>
+<img src="./images/ferramentas.png" width="400">
 <ol>
   <h2><li>Descobrindo dispositivos ativos na rede</li></h2>
   Para identificar quais máquinas estavam ativas na rede interna (Host-Only), utilizei o comando:<br>
